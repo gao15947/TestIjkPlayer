@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ytj_player_center_bg">
+
+    <!-- 声音-->
+    <LinearLayout
+        android:id="@+id/ytj_player_volume_layout"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:gravity="center_horizontal|center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ytj_player_volume_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ytj_player_volume_up"/>
+
+        <TextView
+            android:id="@+id/ytj_player_volume_text"
+            style="@style/Player_Text_Style"
+            android:layout_marginTop="5dp"
+            android:text="50%"/>
+
+        <ProgressBar
+            android:id="@+id/ytj_player_volume_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:max="100"/>
+    </LinearLayout>
+
+    <!-- 亮度-->
+    <LinearLayout
+        android:id="@+id/ytj_player_brightness_layout"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:gravity="center_horizontal|center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ytj_player_brightness"/>
+
+        <TextView
+            android:id="@+id/ytj_player_brightness_text"
+            style="@style/Player_Text_Style"
+            android:layout_marginTop="5dp"
+            android:text="50%"/>
+
+        <ProgressBar
+            android:id="@+id/ytj_player_brightness_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:max="100"/>
+    </LinearLayout>
+
+    <!-- 快进快退-->
+    <LinearLayout
+        android:id="@+id/ytj_player_fastForward_layout"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:gravity="center_horizontal|center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ytj_player_fastForward_time"
+            style="@style/Player_Text_Style"
+            android:text="-1s"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/ytj_player_fastForward_target"
+                style="@style/Player_Text_Style"
+                android:text="01:00"/>
+
+            <TextView
+                style="@style/Player_Text_Style"
+                android:text="/"/>
+
+            <TextView
+                android:id="@+id/ytj_player_fastForward_total"
+                style="@style/Player_Text_Style"
+                android:text="02:00"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

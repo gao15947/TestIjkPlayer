@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--重新播放-->
+    <LinearLayout
+        android:id="@+id/ytj_player_replay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!-- 播放状态-->
+        <TextView
+            android:id="@+id/ytj_player_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放失败,请重新播放"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/ytj_player_replay_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:src="@drawable/ytj_player_circle_outline"
+            android:contentDescription="@null"/>
+    </LinearLayout>
+    <!-- 网络提示-->
+    <LinearLayout
+        android:id="@+id/ytj_player_netTie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="您正在使用移动网络播放视频\n可能产生较高流量费用"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/ytj_player_netTie_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ytj_player_btn"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="继续"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <!-- 最大试看时长提示-->
+    <LinearLayout
+        android:id="@+id/ytj_player_freeTie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="试看时间已到，请购买继续观看"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/ytj_player_freeTie_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ytj_player_btn"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="购买"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

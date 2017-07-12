@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ytj_player_video_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.ytj.ytjijkplayer.media.IjkVideoView
+        android:id="@+id/ytj_player_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- 封面显示-->
+    <ImageView
+        android:id="@+id/ytj_player_video_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"/>
+
+    <include
+        android:id="@+id/ytj_player_tips_layout"
+        layout="@layout/ytj_player_controller_tips_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ytj_player_video_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateOnly="true"/>
+
+        <TextView
+            android:id="@+id/ytj_player_video_speed"
+            style="@style/Player_Text_Style"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/ytj_player_touch_layout"
+        layout="@layout/ytj_player_controller_touch_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ytj_player_video_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@null"
+        android:src="@drawable/ytj_player_center_play"/>
+
+    <include
+        android:id="@+id/ytj_player_toolbar_layout"
+        layout="@layout/ytj_player_controller_toolbar_layout"/>
+
+    <include
+        android:id="@+id/ytj_player_bar_layout"
+        layout="@layout/ytj_player_controller_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <LinearLayout
+        android:id="@+id/ytj_player_resolution_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:alpha="0.6"
+        android:background="@color/player_controller_bar_bg"
+        android:gravity="center_horizontal|center"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/ytj_player_resolution_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:scrollbars="none"/>
+    </LinearLayout>
+</RelativeLayout>
