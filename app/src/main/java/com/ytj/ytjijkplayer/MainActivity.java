@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
                                 .into(ivThumbnail);
                     }
                 })
-                .hideResolution(true);
+                .hideResolution(true)
+                .setChargeTie(true, 60);
     }
 
     @Override

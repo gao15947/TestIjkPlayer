@@ -147,7 +147,7 @@ public class VideoPlayView {
     /**
      * Activity界面方向监听
      */
-    private OrientationEventListener mOrientationEventListener;
+    //private OrientationEventListener mOrientationEventListener;
 
     /**
      * 控制面板收起或者显示的轮询监听
@@ -222,6 +222,8 @@ public class VideoPlayView {
     private boolean isCharge = false;
     //免费播放时长
     private int mMaxPlayTime = 0;
+    //收费布局显示
+    private boolean isShowChargeLayout = false;
     /**
      * 视频播放时信息回调
      */
@@ -356,6 +358,7 @@ public class VideoPlayView {
      *
      * @param isCharge    true为收费 false为免费即不做限制
      * @param maxPlayTime 最大能播放时长，单位秒
+     * tips:收费视频需再开个监控线程
      */
     public VideoPlayView setChargeTie(boolean isCharge, int maxPlayTime) {
         this.isCharge = isCharge;
@@ -559,7 +562,7 @@ public class VideoPlayView {
     }
 
     public void onDestroy() {
-        mOrientationEventListener.disable();
+        //mOrientationEventListener.disable();
         mHandler.removeMessages(HANDLER_RESTART_PLAY);
         mHandler.removeMessages(HANDLER_SEEK_NEW_POSITION);
         mVideoView.stopPlayback();
@@ -602,7 +605,7 @@ public class VideoPlayView {
                     setProcessDurationOrientation(isPortrait);
                 }
             });
-            mOrientationEventListener.enable();
+            //mOrientationEventListener.enable();
         }
     }
 
@@ -800,23 +803,25 @@ public class VideoPlayView {
             }
         });
 
-        mOrientationEventListener = new OrientationEventListener(mContext) {
+/*        mOrientationEventListener = new OrientationEventListener(mContext) {
             @Override
             public void onOrientationChanged(int orientation) {
-                if (orientation >= 0 && orientation <= 30 || orientation >= 330 || (orientation >= 150 && orientation <= 210)) {
+                if (orientation >= 0 && orientation <= 30 || orientation >= 330
+                        || (orientation >= 150 && orientation <= 210)) {
                     //竖屏
                     if (isPortrait) {
                         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                         mOrientationEventListener.disable();
                     }
-                } else if ((orientation >= 90 && orientation <= 120) || (orientation >= 240 && orientation <= 300)) {
+                } else if ((orientation >= 90 && orientation <= 120)
+                        || (orientation >= 240 && orientation <= 300)) {
                     if (!isPortrait) {
                         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                         mOrientationEventListener.disable();
                     }
                 }
             }
-        };
+        };*/
 
         isPortrait = (getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mInitHeight = mVideoLayout.getLayoutParams().height;
